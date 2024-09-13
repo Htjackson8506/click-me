@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light
       ),
       darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black, brightness: Brightness.dark),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 88), brightness: Brightness.dark),
         brightness: Brightness.dark,
         useMaterial3: true
         ),
-
+      themeMode: ThemeMode.dark,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -50,6 +50,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   ThemeMode _themeMode = ThemeMode.dark;
+  
+
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -60,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
   
   void _changeThemeDark() {
     setState(() {
@@ -70,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _changeThemeLight() {
     setState((){
       _themeMode = ThemeMode.light;
+      
     });
   }
 
